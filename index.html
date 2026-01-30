@@ -3,16 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Advanced Calculator</title>
+  <title>Scientific Calculator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="calculator">
     <input type="text" class="display" id="display" disabled />
     <div class="buttons">
-      <button onclick="clearDisplay()">C</button>
-      <button onclick="backspace()">←</button>
-      <button onclick="invertSign()">±</button>
+      <!-- Memory Functions -->
+      <button class="memory" onclick="memoryClear()">MC</button>
+      <button class="memory" onclick="memoryRecall()">MR</button>
+      <button class="memory" onclick="memoryStore()">MS</button>
+      <button class="memory" onclick="memoryAdd()">M+</button>
+
+      <!-- Scientific Functions Row 1 -->
+      <button class="scientific" onclick="sin()">sin</button>
+      <button class="scientific" onclick="cos()">cos</button>
+      <button class="scientific" onclick="tan()">tan</button>
+      <button class="scientific" onclick="log()">log</button>
+
+      <!-- Scientific Functions Row 2 -->
+      <button class="scientific" onclick="ln()">ln</button>
+      <button class="scientific" onclick="exp()">eˣ</button>
+      <button class="scientific" onclick="power()">xʸ</button>
+      <button class="scientific" onclick="factorial()">n!</button>
+
+      <!-- Constants -->
+      <button class="constant" onclick="pi()">π</button>
+      <button class="constant" onclick="e()">e</button>
+      <button class="function" onclick="square()">x²</button>
+      <button class="function" onclick="squareRoot()">√</button>
+
+      <!-- Main Calculator -->
+      <button class="function" onclick="clearDisplay()">C</button>
+      <button class="function" onclick="backspace()">⌫</button>
+      <button class="function" onclick="invertSign()">±</button>
       <button class="operator" onclick="appendToDisplay('/')">÷</button>
 
       <button onclick="appendToDisplay('7')">7</button>
@@ -33,11 +58,7 @@
       <button onclick="appendToDisplay('0')">0</button>
       <button onclick="appendToDisplay('.')">.</button>
       <button class="equal" onclick="calculate()">=</button>
-      <button onclick="square()">x²</button>
-
-      <button onclick="squareRoot()">√</button>
-      <button onclick="reciprocal()">1/x</button>
-      <button onclick="percentage()">%</button>
+      <button class="function" onclick="percentage()">%</button>
     </div>
   </div>
   <script src="script.js"></script>
